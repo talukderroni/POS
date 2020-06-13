@@ -13,5 +13,12 @@ namespace DemoProject.Controllers
         {
             return View();
         }
+
+        // GET: Custom
+        public ActionResult About()
+        {
+            return View();
+        }
+
     }
 }
