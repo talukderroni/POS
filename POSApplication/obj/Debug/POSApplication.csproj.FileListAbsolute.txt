@@ -54,3 +54,4 @@ G:\Live\POSApplication\Source\POSApplication\bin\Antlr3.Runtime.pdb
 G:\Live\POSApplication\Source\POSApplication\bin\Newtonsoft.Json.xml
 G:\Live\POSApplication\Source\POSApplication\obj\Debug\POSApplication.dll
 G:\Live\POSApplication\Source\POSApplication\obj\Debug\POSApplication.pdb
+G:\Live\POSApplication\Source\POSApplication\obj\Debug\POSApplication.csprojResolveAssemblyReference.cache

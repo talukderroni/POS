@@ -21,7 +21,7 @@ namespace POSApplication.Controllers
         // GET: Secu_User
         public ActionResult Index()
         {
-            var IsSuperAdmin = Convert.ToBoolean(Session["IsSuperAdmin"].ToString());
+            var IsSuperAdmin = true;/*Convert.ToBoolean(Session["IsSuperAdmin"].ToString());*/
 
             if (IsSuperAdmin)
             {
@@ -31,7 +31,7 @@ namespace POSApplication.Controllers
             {
                 return View(db.Secu_User.Where(x => x.IsSuperAdmin == null || x.IsSuperAdmin == false).ToList());
             }
-
+            return View(db.Secu_User.ToList());
         }
 
         // GET: Secu_User/Details/5

@@ -5,28 +5,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="panel panel-flat">
-    <div class="panel-heading">
-        <h5 class="panel-title "><i class="icon-task position-left"></i>Role List</h5><hr />
-        <div class="heading-elements">
-            <ul class="icons-list">
-                <li><a data-action="collapse"></a></li>
-                <li><a data-action="reload"></a></li>
-            </ul>
-        </div>
-    </div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading"><b>Roll List</b></div>
+    
+
 
     <div class="panel-body">
         <p>
             @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-success" })
-        </p>
-        <table class="table table-responsive table-bordered datatable-show-all">
+        </p><br>
+        <table id="datatable" class="table table-responsive table-bordered datatable-show-all ppp">
             <thead>
-                <tr class="bg-blue-700">
+                <tr class="bg-blue">
                     <th>
                         @Html.DisplayNameFor(model => model.Name)
                     </th>
-                    <th></th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,11 +32,11 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
-                        <td>
-                            @Html.ActionLink(" ", "Edit", new { Id = item.Id }, new { @class = "btn btn-xs text-info  icon-pencil4", @title = "Edit" })
-                            @*@Html.ActionLink(" ", "Details", new { Id = item.Id }, new { @class = "btn btn-xs text-info  icon-file-text2", @title = "Details" })*@
-                            <a class="btn btn-xs text-danger icon-cross2" title="Delete" href="javascript:deleteFunction(@item.Id)"></a>
-                        </td>
+             <td>          
+    @Html.ActionLink(" ", "Edit", new { Id = item.Id }, new { @class = "btn btn-xs-info  glyphicon glyphicon-pencil", @title = "Edit" })
+    @*@Html.ActionLink(" ", "Details", new { Id = item.Id }, new { @class = "btn btn-xs text-info  icon-file-text2", @title = "Details" })*@
+    <a class="btn btn-xs labeled btn-danger" title="Delete" href="javascript:deleteFunction(@item.Id)"><i class="glyphicon glyphicon-remove"></i>   </a>
+</td>
                     </tr>
                 }
 
@@ -49,16 +45,17 @@
     </div>
 </div>
 
-<script src="~/Scripts/dataTable/jquery.dataTables.min.js"></script>
-<script src="~/Scripts/dataTable/datatables_advanced.js"></script>
-
 @section scripts
 {
-    @*@Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Plugins/select2/select2.min.js"></script>*@
-    <script>
-        $(".select2").select2();
 
+@*<script src="~/Content/plugins/datatables/jquery.dataTables.min.js"></script>*@
+
+    <script>
+   
+        $("#datatable").DataTable();
+
+
+        alert("Tst");
         function deleteFunction(Id) {
             var Con = confirm("are you sure want to delete this ?");
             if (Con == true) {
