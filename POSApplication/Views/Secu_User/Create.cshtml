@@ -215,10 +215,7 @@
                 alert('UserName required');
                 $('#UserName').focus();
             }
-            else if ($.trim($('#CompanyUnitId').val()) === "") {
-                alert('Company required');
-                $('#CompanyUnitId').focus();
-            }
+           
             else if ($.trim($('#RoleId').val()) === "") {
                 alert('Role required');
                 $('#RoleId').focus();
@@ -248,7 +245,7 @@
             var Email = $('#Email').val();
             var Password = $('#Password').val();
             var RoleId = $('#RoleId').val();
-            var CompanyUnitId = $('#CompanyUnitId').val();
+      
             var IsAdmin = 0;
             if ($('#IsAdmin').is(":checked")) {
                 IsAdmin = 1;
@@ -270,7 +267,7 @@
                 Password: Password,
                 RoleId: RoleId,
                 IsAdmin: IsAdmin,
-                CompanyUnitId: CompanyUnitId
+               
             });
 
 

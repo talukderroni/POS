@@ -44,8 +44,7 @@ namespace POSApplication.Models
         [Display(Name = "Role Name")]
         public int? RoleId { get; set; }
 
-        [Display(Name = "Company")]
-        public int CompanyUnitId { get; set; }
+     
       
         public bool? IsSuperAdmin { get; set; }
         

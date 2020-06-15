@@ -7,8 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
+
+
 namespace POSApplication.Controllers
 {
+    [Authorize]
     public class Secu_RoleController : Controller
     {
         private SCMSContext db = new SCMSContext();

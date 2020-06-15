@@ -12,6 +12,7 @@ using System.Web.Security;
 
 namespace POSApplication.Controllers
 {
+    [Authorize]
     public class Secu_UserController : Controller
     {
         private SCMSContext db = new SCMSContext();
@@ -21,7 +22,7 @@ namespace POSApplication.Controllers
         // GET: Secu_User
         public ActionResult Index()
         {
-            var IsSuperAdmin = true;/*Convert.ToBoolean(Session["IsSuperAdmin"].ToString());*/
+            var IsSuperAdmin = Convert.ToBoolean(Session["IsSuperAdmin"].ToString());
 
             if (IsSuperAdmin)
             {
@@ -31,7 +32,7 @@ namespace POSApplication.Controllers
             {
                 return View(db.Secu_User.Where(x => x.IsSuperAdmin == null || x.IsSuperAdmin == false).ToList());
             }
-            return View(db.Secu_User.ToList());
+
         }
 
         // GET: Secu_User/Details/5
@@ -56,8 +57,7 @@ namespace POSApplication.Controllers
         {
             ViewBag.UserStatus = new SelectList(new List<SelectListItem> { new SelectListItem { Text = "Inactive", Value = "0" }, new SelectListItem { Text = "Active", Value = "1" } }, "Value", "Text");
             ViewBag.RoleId = new SelectList(db.Secu_Role, "Id", "Name");
-            //ViewBag.CompanyUnitId = new SelectList(db.CompanyUnit, "Id", "Name");
-
+          
 
             return View();
         }
@@ -94,6 +94,10 @@ namespace POSApplication.Controllers
                     try
                     {
                         string salt = encryptionDecryptionUtil.GenerateSalt(saltLength);
+
+                        //-------
+
+
                         var user = new Secu_User()
                         {
                             Id = User.Id,
@@ -104,7 +108,7 @@ namespace POSApplication.Controllers
                             //Password = User.Password,
                             Salt = salt,
                             Password = encryptionDecryptionUtil.CreatePasswordHash(User.Password, salt),
-                            CompanyUnitId = User.CompanyUnitId,
+                          
                             UserFullName = User.UserFullName,
                             RoleId = User.RoleId,
                             IsAdmin = User.IsAdmin
@@ -114,6 +118,10 @@ namespace POSApplication.Controllers
                         //db.Entry(user).State = EntityState.Added;
                         db.Secu_User.Add(user);
                         db.SaveChanges();
+
+                        TempData["myData"] = user.Id;
+                        //-------------------
+
 
 
                         dbContextTransaction.Commit();
@@ -266,7 +274,7 @@ namespace POSApplication.Controllers
                         user.UserStatus = User.UserStatus;
                         user.RoleId = User.RoleId;
                         user.IsAdmin = User.IsAdmin;
-                        user.CompanyUnitId = User.CompanyUnitId;
+              
 
                         db.Entry(user).State = EntityState.Modified;
 
@@ -364,9 +372,10 @@ namespace POSApplication.Controllers
 
                 ViewBag.UserStatus = new SelectList(new List<SelectListItem> { new SelectListItem { Text = "Inactive", Value = "0" }, new SelectListItem { Text = "Active", Value = "1" } }, "Value", "Text", secu_User.UserStatus);
                 ViewBag.RoleId = new SelectList(db.Secu_Role, "Id", "Name", secu_User.RoleId);
-               
-                //ViewBag.Images = db.UserImage.Where(x => x.Secu_UserId == secu_User.Id).ToList();
-                //ViewBag.ShowUploadBtn = db.UserImage.Where(x => x.Secu_UserId == secu_User.Id).Count() > 0 ? false : true;
+              
+
+                ViewBag.Images = db.UserImage.Where(x => x.Secu_UserId == secu_User.Id).ToList();
+                ViewBag.ShowUploadBtn = db.UserImage.Where(x => x.Secu_UserId == secu_User.Id).Count() > 0 ? false : true;
 
 
                 return View(secu_User);
@@ -495,13 +504,13 @@ namespace POSApplication.Controllers
 
         }
 
-        public JsonResult GetNamesByCompany(int CompanyUnitId)
-        {
-            var data = db.Secu_User.Where(x => x.CompanyUnitId == CompanyUnitId && x.IsSuperAdmin != true).Select(y => new { Name = y.UserName, Id = y.Id }).ToList();
+        //public JsonResult GetNamesByCompany(int CompanyUnitId)
+        //{
+        //    var data = db.Secu_User.Where(x => x.CompanyUnitId == CompanyUnitId && x.IsSuperAdmin != true).Select(y => new { Name = y.UserName, Id = y.Id }).ToList();
 
-            return Json(data, JsonRequestBehavior.AllowGet);
+        //    return Json(data, JsonRequestBehavior.AllowGet);
 
-        }
+        //}
 
         public JsonResult DeleteItem(int Id)
         {
@@ -511,30 +520,27 @@ namespace POSApplication.Controllers
                 message = "Error occured. !"
             };
 
-            //var checkData = db.Secu_User.Where(x => x.RoleId == Id).ToList();
-
-            //if (checkData.Count() > 0)
-            //{
-
-            //    result = new
-            //    {
-            //        flag = false,
-            //        message = "Role has been used!!"
-            //    };
-            //}
-            //else
-            //{
-
-            var Item = db.Secu_User.SingleOrDefault(x => x.Id == Id);
-            db.Secu_User.Remove(Item);
-            db.SaveChanges();
-
+           
+          
             try
             {
                 using (var dbContextTransaction = db.Database.BeginTransaction())
                 {
                     try
                     {
+                        var deletedItem = db.UserImage.Where(x => x.Secu_UserId == Id).ToList();
+                        db.UserImage.RemoveRange(deletedItem);
+                        db.SaveChanges();
+
+
+
+                        var Item = db.Secu_User.SingleOrDefault(x => x.Id == Id);
+                        db.Secu_User.Remove(Item);
+                        db.SaveChanges();
+
+
+
+
                         dbContextTransaction.Commit();
 
                         result = new
@@ -588,6 +594,10 @@ namespace POSApplication.Controllers
         [HttpPost]
         public ActionResult ImageUpload(int? UId,int ImageType)
         {
+
+            UId = (int)(TempData["myData"]);
+
+      
             var userId = Convert.ToInt32(Session["uid"].ToString());
             bool isSavedSuccessfully = true;
             // bool saveinfolder = false;
