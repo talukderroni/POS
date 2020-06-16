@@ -15,7 +15,7 @@ namespace POSApplication.Controllers
     [Authorize]
     public class Secu_UserController : Controller
     {
-        private SCMSContext db = new SCMSContext();
+        private POSDBContext db = new POSDBContext();
         private EncryptionDecryptionUtil encryptionDecryptionUtil = new EncryptionDecryptionUtil();
         private int saltLength = 5;
 
@@ -62,19 +62,7 @@ namespace POSApplication.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "Id,UserName,Password,Salt,UserFullName,IsAdmin,UserStatus,LastLoginDate,InvalidAttempt,TeamId,DesignationId,RoleId")] Secu_User secu_User)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Secu_User.Add(secu_User);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(secu_User);
-        //}
+        
 
 
         public JsonResult SaveUser(Secu_User User)

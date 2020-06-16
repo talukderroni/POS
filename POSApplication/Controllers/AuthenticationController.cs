@@ -17,7 +17,7 @@ namespace POSApplication.Controllers
     public class AuthenticationController : Controller
     {
        
-        private SCMSContext db = new SCMSContext();
+        private POSDBContext db = new POSDBContext();
         private EncryptionDecryptionUtil encryptionDecryptionUtil = new EncryptionDecryptionUtil();
         //private int saltLength = 5;
 
@@ -28,6 +28,7 @@ namespace POSApplication.Controllers
         //}
 
         [AllowAnonymous]
+        [HttpGet]
         public ActionResult Login(string returnUrl)
         {
            
@@ -43,7 +44,7 @@ namespace POSApplication.Controllers
         {
 
             var user = db.Secu_User.FirstOrDefault(x => x.UserName == model.UserName);
-            
+            var UserImage = db.UserImage.Where(x => x.Secu_UserId == user.Id).Select(x => x.ImageURL).FirstOrDefault();
             var Message = "";
             if (user != null)
             {
@@ -60,6 +61,11 @@ namespace POSApplication.Controllers
                     Session["IsSuperAdmin"] = user.IsSuperAdmin == null ? false: user.IsSuperAdmin;
                     Session["loginCounter"] = 0;
 
+                    Session["UserImage"] = UserImage;
+
+                    Session["UserFullName"] = user.UserFullName;
+
+                    Session["UserRole"] = user.Secu_Role.Name;
                     user.LastLoginDate = DateTime.Now;
                     db.Entry(user).State = EntityState.Modified;
 
@@ -107,9 +113,33 @@ namespace POSApplication.Controllers
 
         //
         // POST: /Account/LogOff
+    
+        //[ValidateAntiForgeryToken]
+
+        //[AllowAnonymous]
+        //public ActionResult LogOff()
+        //{
+        //    var uid = 0;
+        //    if (Session["uid"] != null)
+        //    {
+        //        uid = Convert.ToInt32(Session["uid"].ToString());
+        //    }
+
+
+        //    //authProvider.SignOut();
+        //    FormsAuthentication.SignOut();
+
+        //    var Message = "Logged out.";
+
+
+        //    Session.Abandon();
+        //    //Success("Sign out successfully");
+        //    return RedirectToAction("Login", "Authentication");
+
+
+        //}
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        public ActionResult SignOut()
         {
             var uid = 0;
             if (Session["uid"] != null)
@@ -122,7 +152,7 @@ namespace POSApplication.Controllers
             FormsAuthentication.SignOut();
 
             var Message = "Logged out.";
-            
+
 
             Session.Abandon();
             //Success("Sign out successfully");

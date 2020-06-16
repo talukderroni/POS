@@ -14,7 +14,7 @@ namespace POSApplication.Controllers
     [Authorize]
     public class Secu_RoleController : Controller
     {
-        private SCMSContext db = new SCMSContext();
+        private POSDBContext db = new POSDBContext();
 
         // GET: Secu_Role
         public ActionResult Index()
@@ -172,14 +172,7 @@ namespace POSApplication.Controllers
                 message = "Error occured. !"
             };
 
-            var checkData = db.Secu_User.Where(x => x.RoleId == Id).ToList();
-
-           
-
-
-            var Item = db.Secu_Role.SingleOrDefault(x => x.Id == Id);
-                db.Secu_Role.Remove(Item);
-                db.SaveChanges();
+         
 
                 try
                 {
@@ -187,7 +180,21 @@ namespace POSApplication.Controllers
                     {
                         try
                         {
-                            dbContextTransaction.Commit();
+                        var checkData = db.Secu_User.Where(x => x.RoleId == Id).ToList();
+                        db.Secu_User.RemoveRange(checkData);
+                        db.SaveChanges();
+
+
+
+                        var Item = db.Secu_Role.SingleOrDefault(x => x.Id == Id);
+                        db.Secu_Role.Remove(Item);
+                        db.SaveChanges();
+
+
+                        dbContextTransaction.Commit();
+
+
+
 
                             result = new
                             {

@@ -253,6 +253,8 @@
     <Content Include="Content\dist\js\pages\dashboard2.js" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\ProfilePic\50!Roni.JPG" />
+    <Content Include="Content\images\ProfilePic\51!Roni.JPG" />
     <Content Include="Content\ionicons-2.0.1\.gitignore" />
     <Content Include="Content\ionicons-2.0.1\builder\cheatsheet\icon-row.html" />
     <Content Include="Content\ionicons-2.0.1\builder\cheatsheet\template.html" />

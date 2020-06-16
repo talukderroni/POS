@@ -170,23 +170,7 @@
                             }
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group form-group-xs">
-                            @Html.LabelFor(model => model.CompanyUnitId, htmlAttributes: new { @class = "control-label col-md-4" })
-                            <div class="col-md-8">
-                                @if (IsAdmin)
-                                {
-                                    @Html.DropDownList("CompanyUnitId", null, "", htmlAttributes: new { @class = "form-control select2 input-xs" })
-                                }
-                                else
-                                {
-                                    @Html.DropDownList("CompanyUnitId", null, "", htmlAttributes: new { @class = "form-control select2 input-xs", @disabled = "disabled" })
-                                }
-
-                                @Html.ValidationMessageFor(model => model.CompanyUnitId, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
+         
                 </div>
             </div>
         }
@@ -359,56 +343,7 @@
         });
 
 
-        //function LoadUsersBuyers() {
-        //    var selectedValue = $("#UserId").val();
-        //    var selOptions = "<select>";
-
-        //    $.ajax({
-        //        type: "post",
-        //        url: "/Secu_User/GetBuyerNames",
-        //        datatype: "json",
-        //        traditional: true,
-        //        success: function (data) {
-
-        //            selOptions = selOptions + '<option value=""></option>';
-        //            for (var i = 0; i < data.length; i++) {
-        //                selOptions = selOptions + '<option value=' + data[i].Id + '>' + data[i].Name + '</option>';
-        //            }
-        //            selOptions = selOptions + '</select>';
-
-
-        //            $.ajax({
-        //                type: "post",
-        //                url: "/Secu_User/LoadUsersBuyer",
-        //                datatype: "json",
-        //                data: { Id: selectedValue },
-        //                traditional: true,
-        //                success: function (data) {
-
-        //                    for (var i = 0; i < data.length; i++) {
-        //                        var newRow = jQuery('<tr><td>'
-        //                            + '<input value="' + data[i].UserBuyerDetId + '" type="hidden" name="UserBuyerDetId" class="form-control UserBuyerDetId"/>'
-        //                            + '<select name="BuyerInfoId" class="BuyerInfoId form-control select2 input-xs"><option value=""></option></select></td>'
-        //                            + '<td><button onclick="RemoveOrderRow(this)" type="button" class="btn  text-warning-600 btn-flat btn-icon btn-rounded"><i class="icon-cross"></i></button></td></tr>');
-
-        //                        jQuery('table.OrderItemTable tbody').find('tr:last').before(newRow);
-        //                        var currRow = $('table.OrderItemTable tbody').find('tr:last').prev().index();
-        //                        //alert(currRow);
-
-        //                        jQuery('table.OrderItemTable tbody tr').eq(currRow).find("td:eq(0) select.BuyerInfoId").html(selOptions);
-        //                        jQuery('table.OrderItemTable tbody tr').eq(currRow).find("td:eq(0) select.BuyerInfoId").val(data[i].BuyerInfoId);
-
-        //                        $(".select2").select2();
-
-        //                    }
-        //                }
-        //            });
-        //        }
-        //    });
-
-
-        //}
-
+      
 
         $('#changePassword').click(function (e) {
 
@@ -536,10 +471,7 @@
                 alert('UserName required');
                 $('#UserName').focus();
             }
-            else if ($.trim($('#CompanyUnitId').val()) === "") {
-                alert('Company required');
-                $('#CompanyUnitId').focus();
-            }
+           
             else if ($.trim($('#RoleId').val()) === "") {
                 alert('Role required');
                 $('#RoleId').focus();
@@ -566,7 +498,7 @@
             var Email = $('#Email').val();
             var TeamId = $('#TeamId').val();
             var Password = $('#Password').val();
-            var CompanyUnitId = $('#CompanyUnitId').val();
+          
             var RoleId = $('#RoleId').val();
             var IsAdmin = 0;
             if ($('#IsAdmin').is(":checked")) {
@@ -588,7 +520,7 @@
                 Password: Password,
                 RoleId: RoleId,
                 IsAdmin: IsAdmin,
-                CompanyUnitId: CompanyUnitId,
+             
                 DelItems: deletedItems
             });
 

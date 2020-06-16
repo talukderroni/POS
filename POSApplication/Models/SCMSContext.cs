@@ -9,14 +9,14 @@ using POSApplication.Models;
 
 namespace POSApplication.Models
 {
-    public class SCMSContext : DbContext
+    public class POSDBContext : DbContext
     {
-        public SCMSContext() : base("SCMS")
+        public POSDBContext() : base("POSDB")
         {
 
         }
 
-        public SCMSContext (DbConnection con, bool contextOwnsConnection) : base(con, contextOwnsConnection)
+        public POSDBContext (DbConnection con, bool contextOwnsConnection) : base(con, contextOwnsConnection)
         {
 
         }

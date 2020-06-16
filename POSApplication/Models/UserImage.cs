@@ -12,7 +12,7 @@ namespace POSApplication.Models
     {
         [Key]
         public int Id { get; set; }
-
+        [ForeignKey("Secu_User")]
         public int Secu_UserId { get; set; }
         public virtual Secu_User Secu_User { get; set; }
 

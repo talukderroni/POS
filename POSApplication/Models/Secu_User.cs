@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -42,10 +43,12 @@ namespace POSApplication.Models
         public int? InvalidAttempt { get; set; }
 
         [Display(Name = "Role Name")]
+        [ForeignKey("Secu_Role")]
         public int? RoleId { get; set; }
+        public virtual Secu_Role Secu_Role { get; set; }
 
-     
-      
+
+
         public bool? IsSuperAdmin { get; set; }
         
 
