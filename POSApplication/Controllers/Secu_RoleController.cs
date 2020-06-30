@@ -27,9 +27,6 @@ namespace POSApplication.Controllers
        
         public ActionResult Create()
         {
-           
-
-            ViewBag.CloneRole = new SelectList(db.Secu_Role, "Id", "Name");
             return View();
         }
 
@@ -47,42 +44,7 @@ namespace POSApplication.Controllers
                         secu_Role.OpOn = DateTime.Now;
                         db.Secu_Role.Add(secu_Role);
                         db.SaveChanges();
-
-                        //if (CloneRole != null)
-                        //{
-                        //    var rolePerMas = new Secu_RolePermissionMas()
-                        //    {
-                        //        Id = 0,
-                        //        Secu_RoleId = secu_Role.Id,
-                        //        OpBy = Convert.ToInt32(Session["uid"].ToString()),
-                        //        OpOn = DateTime.Now
-                        //    };
-
-                        //    db.Secu_RolePermissionMas.Add(rolePerMas);
-                        //    //db.Entry(rolePerMas).State = EntityState.Added;
-                        //    db.SaveChanges();
-
-                        //    var getRolePerm = db.Secu_RolePermissionDet.AsNoTracking().Where(x => x.Secu_RolePermissionMas.Secu_RoleId == CloneRole).ToList();
-
-                        //    foreach (var item in getRolePerm)
-                        //    {
-                        //        var roleDet = new Secu_RolePermissionDet()
-                        //        {
-                        //            //Id = 0,
-                        //            Secu_RolePermissionMasId = rolePerMas.Id,
-                        //            Secu_FormsId = item.Secu_FormsId,
-                        //            DataViewPerm = item.DataViewPerm,
-                        //            DataAddPerm = item.DataAddPerm,
-                        //            DataEditPerm = item.DataEditPerm,
-                        //            DataDeletePerm = item.DataDeletePerm
-                        //        };
-
-                        //        db.Secu_RolePermissionDet.Add(roleDet);
-                        //        //db.Entry(roleDet).State = EntityState.Added;
-                        //        db.SaveChanges();
-                        //    }
-                        //}
-
+                        
                         dbContextTransaction.Commit();
                     }
                     catch (Exception ex)
@@ -92,7 +54,9 @@ namespace POSApplication.Controllers
                     }
                 }
 
-                return RedirectToAction("Index");
+                ViewBag.Message = "Succeess";
+                return View();
+                //return RedirectToAction("Index");
             }
 
             return View(secu_Role);
@@ -124,37 +88,15 @@ namespace POSApplication.Controllers
                 secu_Role.OpOn = DateTime.Now;
                 db.Entry(secu_Role).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                ViewBag.Message = "Succeess";
+                return View();
+                //return RedirectToAction("Index");
             }
             return View(secu_Role);
         }
 
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Secu_Role secu_Role = db.Secu_Role.Find(id);
-        //    if (secu_Role == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(secu_Role);
-        //}
-
-
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Secu_Role secu_Role = db.Secu_Role.Find(id);
-        //    db.Secu_Role.Remove(secu_Role);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-
+        
         public JsonResult GetNames()
         {
             var data = db.Secu_Role.Select(y => new { Name = y.Name, Id = y.Id }).ToList();
@@ -226,11 +168,7 @@ namespace POSApplication.Controllers
                     };
                 }
             
-
-
             return Json(result, JsonRequestBehavior.AllowGet);
-
-
         }
 
 

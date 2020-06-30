@@ -13,6 +13,7 @@
 
 
     <div class="panel-body">
+        
         <p>
             @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-success" })
         </p><br>
@@ -70,8 +71,18 @@
                         console.log(flag);
 
                         if (flag.flag == true) {
-                            alert("Successfully deleted !");
-                            window.location = "/Secu_Role/Index";
+
+                            Swal.fire({
+                                position: 'top',
+                                icon: 'success',
+                                title: 'Delete Successfully!',
+                                showConfirmButton: true,
+                            }).then((result) => {
+                                if (result.value) {
+                                    window.location = "/Secu_Role/Index";
+                                }
+                            })
+
                         } else {
                             alert(flag.message);
                         }

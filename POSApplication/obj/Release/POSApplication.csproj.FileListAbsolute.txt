@@ -1,0 +1,228 @@
+G:\Live\POSApplication\Source\POSApplication\bin\ApplicationInsights.config
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\csc.exe
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\System.Collections.Immutable.dll
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\System.Reflection.Metadata.dll
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\vbc.exe
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\VBCSCompiler.exe
+G:\Live\POSApplication\Source\POSApplication\bin\roslyn\VBCSCompiler.exe.config
+G:\Live\POSApplication\Source\POSApplication\bin\POSApplication.dll.config
+G:\Live\POSApplication\Source\POSApplication\bin\POSApplication.dll
+G:\Live\POSApplication\Source\POSApplication\bin\POSApplication.pdb
+G:\Live\POSApplication\Source\POSApplication\bin\Antlr3.Runtime.dll
+G:\Live\POSApplication\Source\POSApplication\bin\EntityFramework.dll
+G:\Live\POSApplication\Source\POSApplication\bin\EntityFramework.SqlServer.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.Agent.Intercept.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.Web.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.WindowsServer.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.ApplicationInsights.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.Web.Infrastructure.dll
+G:\Live\POSApplication\Source\POSApplication\bin\Newtonsoft.Json.dll
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Helpers.dll
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Mvc.dll
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Optimization.dll
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Razor.dll
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.WebPages.Deployment.dll
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.WebPages.dll
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.WebPages.Razor.dll
+G:\Live\POSApplication\Source\POSApplication\bin\WebGrease.dll
+G:\Live\POSApplication\Source\POSApplication\bin\EntityFramework.xml
+G:\Live\POSApplication\Source\POSApplication\bin\EntityFramework.SqlServer.xml
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.xml
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.Web.xml
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.AI.WindowsServer.xml
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.ApplicationInsights.xml
+G:\Live\POSApplication\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Helpers.xml
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Mvc.xml
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Optimization.xml
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.Razor.xml
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.WebPages.xml
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.WebPages.Deployment.xml
+G:\Live\POSApplication\Source\POSApplication\bin\System.Web.WebPages.Razor.xml
+G:\Live\POSApplication\Source\POSApplication\bin\Antlr3.Runtime.pdb
+G:\Live\POSApplication\Source\POSApplication\bin\Newtonsoft.Json.xml
+G:\Live\POSApplication\Source\POSApplication\obj\Release\POSApplication.csprojResolveAssemblyReference.cache
+G:\Live\POSApplication\Source\POSApplication\obj\Release\POSApplication.dll
+G:\Live\POSApplication\Source\POSApplication\obj\Release\POSApplication.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\ApplicationInsights.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\csc.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\vbc.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\VBCSCompiler.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\POSApplication.dll.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\POSApplication.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\POSApplication.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Antlr3.Runtime.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\EntityFramework.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\EntityFramework.SqlServer.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.Agent.Intercept.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.Web.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.WindowsServer.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.ApplicationInsights.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.Web.Infrastructure.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Newtonsoft.Json.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Helpers.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Mvc.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Optimization.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Razor.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.WebPages.Deployment.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.WebPages.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.WebPages.Razor.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\WebGrease.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\EntityFramework.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\EntityFramework.SqlServer.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.Web.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.AI.WindowsServer.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.ApplicationInsights.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Helpers.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Mvc.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Optimization.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.Razor.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.WebPages.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.WebPages.Deployment.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\System.Web.WebPages.Razor.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Antlr3.Runtime.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\bin\Newtonsoft.Json.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\obj\Release\POSApplication.csprojResolveAssemblyReference.cache
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\obj\Release\POSApplication.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_17_06_20\Source\POSApplication\obj\Release\POSApplication.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\ApplicationInsights.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\csc.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\vbc.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\VBCSCompiler.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\POSApplication.dll.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\POSApplication.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\POSApplication.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Antlr3.Runtime.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\EntityFramework.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\EntityFramework.SqlServer.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.Agent.Intercept.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.Web.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.WindowsServer.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.ApplicationInsights.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.Web.Infrastructure.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Newtonsoft.Json.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Helpers.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Mvc.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Optimization.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Razor.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.WebPages.Deployment.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.WebPages.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.WebPages.Razor.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\WebGrease.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\EntityFramework.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\EntityFramework.SqlServer.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.Web.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.AI.WindowsServer.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.ApplicationInsights.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Helpers.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Mvc.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Optimization.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.Razor.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.WebPages.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.WebPages.Deployment.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\System.Web.WebPages.Razor.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Antlr3.Runtime.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\bin\Newtonsoft.Json.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\obj\Release\POSApplication.csprojResolveAssemblyReference.cache
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\obj\Release\POSApplication.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_21_06_20\Source\POSApplication\obj\Release\POSApplication.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\ApplicationInsights.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\csc.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\vbc.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\VBCSCompiler.exe
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\POSApplication.dll.config
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\POSApplication.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\POSApplication.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Antlr3.Runtime.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\EntityFramework.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\EntityFramework.SqlServer.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.Agent.Intercept.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.Web.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.WindowsServer.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.ApplicationInsights.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.Web.Infrastructure.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Newtonsoft.Json.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Helpers.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Mvc.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Optimization.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Razor.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.WebPages.Deployment.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.WebPages.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.WebPages.Razor.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\WebGrease.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\EntityFramework.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\EntityFramework.SqlServer.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.DependencyCollector.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.Web.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.AI.WindowsServer.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.ApplicationInsights.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Helpers.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Mvc.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Optimization.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.Razor.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.WebPages.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.WebPages.Deployment.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\System.Web.WebPages.Razor.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Antlr3.Runtime.pdb
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\bin\Newtonsoft.Json.xml
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\obj\Release\POSApplication.csprojResolveAssemblyReference.cache
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\obj\Release\POSApplication.dll
+D:\zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\Personal Work\POS APP_26_06_20\Source\POSApplication\obj\Release\POSApplication.pdb

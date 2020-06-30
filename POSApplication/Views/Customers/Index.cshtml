@@ -1,0 +1,181 @@
+﻿@model IEnumerable<POSApplication.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading"><b>Customers List</b></div>
+    <div class="panel-body">
+        <p>
+            @*@Html.ActionLink("Create New", "Create")*@
+            @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-success" })
+        </p><br>
+        <table id="datatable" class="table table-responsive table-bordered datatable-show-all ppp">
+            <thead>
+                <tr class="bg-blue">
+                    <th class="col-sm-1">
+                        @Html.Label("SL No")
+                    </th>
+                    <th class="col-sm-2">
+                        @*@Html.DisplayNameFor(model => model.CustomerName)*@
+                        @Html.Label("Customer Name")
+                    </th>
+                    @*<th class="col-sm-1">
+                        @Html.DisplayNameFor(model => model.Hint)
+                    </th>*@
+                    @*<th class="col-sm-1">
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>*@
+                    <th class="col-sm-1">
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
+                    @*<th class="col-sm-1">
+                        @Html.DisplayNameFor(model => model.OpeningBalance)
+                    </th>*@
+                    <th class="col-sm-2">
+                        @*@Html.DisplayNameFor(model => model.TotalPurchase)*@
+                        @Html.Label("Total Purchase")
+                    </th>
+                    <th class="col-sm-2">
+                        @*@Html.DisplayNameFor(model => model.TotalPaid)*@
+                        @Html.Label("Total Paid")
+                    </th>
+                    <th class="col-sm-2">
+                        @*@Html.DisplayNameFor(model => model.DueBalance)*@
+                        @Html.Label("Due Balance")
+                    </th>
+                    <th class="col-sm-3">
+                        @Html.DisplayName("Action")
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int index = 1;}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @index
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Hint)
+                        </td>*@
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.OpeningBalance)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPurchase)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPaid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DueBalance)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+
+                            @Html.ActionLink(" ", "Edit", new { Id = item.Id }, new { @class = "btn btn-xs-info  glyphicon glyphicon-pencil", @title = "Edit" })
+                            @Html.ActionLink(" ", "Detail", new { Id = item.Id }, new { @class = "btn btn-xs-info glyphicon  glyphicon-file", @title = "Detail" })
+                            <a class="btn btn-xs labeled btn-danger" title="Delete" href="javascript:deleteFunction(@item.Id)"><i class="glyphicon glyphicon-remove"></i></a>
+                        </td>
+                    </tr>
+                    index++;
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+@section scripts
+{
+    <script>
+
+        $("#datatable").DataTable();
+
+        function deleteFunction(Id) 
+        {
+
+            Swal.fire({
+                position: 'top',
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value)
+                {
+                    $.ajax({
+                                url: "/Customers/DeleteItem",
+                                type: "post",
+                                data: {
+                                    Id: Id
+                                },
+                                dataType: "json",
+
+                                success: function (flag) {
+                                    console.log(flag);
+
+                                    if (flag.flag == true) {
+                                        Swal.fire({
+                                            position: 'top',
+                                            icon: 'success',
+                                            title: 'Deleted Successfully!',
+                                            showConfirmButton: true,
+                                        }).then((result) => {
+                                            if (result.value) {
+                                                window.location = "/Customers/Index";
+                                            }
+                                        })
+                            
+                                    } else {
+                                        alert(flag.message);
+                                    }
+                                },
+
+                                error: function (xhr) {
+                                    alert('error');
+
+                                }
+
+
+                            });
+                    
+                }
+            })
+ 
+
+        }
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+

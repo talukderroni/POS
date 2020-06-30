@@ -30,7 +30,7 @@ namespace POSApplication.Models
 
         [Display(Name = "Address")]
         public string Address { get; set; }
-
+        
         [Display(Name = "Is Admin")]
         public bool IsAdmin { get; set; }
 
@@ -49,7 +49,7 @@ namespace POSApplication.Models
 
 
 
-        public bool? IsSuperAdmin { get; set; }
+        //public bool? IsSuperAdmin { get; set; }
         
 
     }

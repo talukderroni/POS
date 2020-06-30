@@ -18,6 +18,9 @@
 
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <input type="hidden" id="Message" value="@ViewBag.Message">
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-5">
@@ -34,6 +37,9 @@
                         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
                     </div>
                 </div>
+
+
+
             </div>
         }
 
@@ -42,45 +48,28 @@
 
 @section Scripts {
 
-    @Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryval")
 
-    <script type="text/javascript">
-        function RebindDatePicker() {
-            $('.datepicker').datepicker("destroy");
-            $('.datepicker').datepicker({
-                format: 'dd/mm/yyyy',
-                todayHighlight: true,
-                todayBtn: true,
-                autoclose: true
-            });
+<script >
+    $(document).ready(function () {
+
+        var message = $("#Message").val();
+
+        if (message != "") {
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: 'Successfully Saved!',
+                showConfirmButton: true,
+            }).then((result) => {
+                if (result.value) {
+                    window.location = "/Secu_Role/Index";
+                }
+            })
         }
+    });
+        
 
-        $(document).ready(function () {
-            //$('body').addClass("sidebar-xs");
-            $(".select2").select2();
-            $('.datepicker').datepicker({
-                format: 'dd/mm/yyyy',
-                todayHighlight: true,
-                todayBtn: true,
-                autoclose: true
-            });
-            // jquery validator bug fix using moment
-            $.validator.methods.date = function (value, element) {
-                return this.optional(element) || moment(value, "DD/MM/YYYY", true).isValid();
-            }
-
-            $('#CloneRole').attr('disabled','true');
-        });
-
-        $('#cloneRolecheck').click(function () {
-            if ($(this).is(':checked')) {
-                $('#CloneRole').removeAttr('disabled');
-            }
-            else {
-                $('#CloneRole').attr('disabled', 'true');
-            }
-        });
-
-    </script>
+</script>
 }
 

@@ -22,15 +22,15 @@ namespace POSApplication.Controllers
         // GET: Secu_User
         public ActionResult Index()
         {
-            var IsSuperAdmin = Convert.ToBoolean(Session["IsSuperAdmin"].ToString());
+            var IsAdmin = Convert.ToBoolean(Session["IsAdmin"].ToString());
 
-            if (IsSuperAdmin)
+            if (IsAdmin)
             {
                 return View(db.Secu_User.ToList());
             }
             else
             {
-                return View(db.Secu_User.Where(x => x.IsSuperAdmin == null || x.IsSuperAdmin == false).ToList());
+                return View(db.Secu_User.Where(x => x.IsAdmin == null || x.IsAdmin == false).ToList());
             }
 
         }
@@ -249,8 +249,8 @@ namespace POSApplication.Controllers
                         //    DesignationId = User.DesignationId,
                         //    IsAdmin = User.IsAdmin
                         //};
-
-                        var userId = Convert.ToInt32(Session["uid"].ToString());
+                        
+                        var userId = Convert.ToInt32(Session["uid"]);
 
                         var user = db.Secu_User.Find(User.Id);
 
@@ -270,6 +270,8 @@ namespace POSApplication.Controllers
                         db.SaveChanges();
 
                         dbContextTransaction.Commit();
+
+                   
 
                         if (user.Id == userId)
                         {
@@ -342,11 +344,11 @@ namespace POSApplication.Controllers
 
         public ActionResult Edit(int? id)
         {
-            var IsSuperAdmin = Convert.ToBoolean(Session["IsSuperAdmin"].ToString());
+            //var IsSuperAdmin = Convert.ToBoolean(Session["IsSuperAdmin"].ToString());
             var IsAdmin = Convert.ToBoolean(Session["IsAdmin"].ToString());
             var userId = Convert.ToInt32(Session["uid"].ToString());
 
-            if(IsSuperAdmin || IsAdmin || userId== id)
+            if(IsAdmin || userId== id)
             {
                 if (id == null)
                 {
@@ -516,6 +518,16 @@ namespace POSApplication.Controllers
                 {
                     try
                     {
+
+                        var deleteImage = db.UserImage.Where(x => x.Secu_UserId == Id).FirstOrDefault();
+                        //var deleteImage = db.UserImage.FirstOrDefault(x => x.Secu_UserId == Id);
+                        //var deletedItem = db.ProjectSiteStatus.Where(x => x.ProjectSiteId == SiteId && x.ProjectId == ProjectId && x.PlanCode == PlanCode && x.SiteStatusDate == SiteStatusDate).ToList();
+                        string path = Path.Combine(Server.MapPath(deleteImage.ImageURL));
+
+                        System.IO.File.Delete(path);
+
+
+
                         var deletedItem = db.UserImage.Where(x => x.Secu_UserId == Id).ToList();
                         db.UserImage.RemoveRange(deletedItem);
                         db.SaveChanges();
@@ -526,7 +538,7 @@ namespace POSApplication.Controllers
                         db.Secu_User.Remove(Item);
                         db.SaveChanges();
 
-
+                        
 
 
                         dbContextTransaction.Commit();
@@ -580,15 +592,16 @@ namespace POSApplication.Controllers
 
 
         [HttpPost]
-        public ActionResult ImageUpload(int? UId,int ImageType)
+        public ActionResult ImageUploadForSave()
         {
 
-            UId = (int)(TempData["myData"]);
+          int UserId = (int)(TempData["myData"]);
+            var UId = UserId;
 
-      
-            var userId = Convert.ToInt32(Session["uid"].ToString());
-            bool isSavedSuccessfully = true;
-            // bool saveinfolder = false;
+
+
+            bool isSavedSuccessfully = false;
+           
             string fName = "";
             try
             {
@@ -600,8 +613,67 @@ namespace POSApplication.Controllers
                     {
                         if (file.FileName.ToLower().EndsWith("jpg") || file.FileName.ToLower().EndsWith("png"))
                         {
-                            if (ImageType == 1)
+
+                            var path = Path.Combine(Server.MapPath("~/Content/images/ProfilePic/"));
+                            string pathString = System.IO.Path.Combine(path.ToString());
+                            var newName = Path.GetFileName(file.FileName);
+                            bool isExists = System.IO.Directory.Exists(pathString);
+                            if (!isExists) System.IO.Directory.CreateDirectory(pathString);
                             {
+                                var updatedFileName = UId + "!" + newName;
+                                //var uploadpath = string.Format("{0}\\{1}", pathString, file.FileName);
+                                var uploadpath = string.Format("{0}{1}", pathString, updatedFileName);
+                                file.SaveAs(uploadpath);
+                                //save in db
+                                UserImage upload = new UserImage();
+                                upload.Id = 0;
+                                string imagepath = "~/Content/images/ProfilePic/" + updatedFileName;
+                                upload.ImageURL = imagepath;
+                                upload.ImageDate = DateTime.Now;
+
+
+                                upload.Secu_UserId = UId;
+
+                                db.UserImage.Add(upload);
+                                db.SaveChanges();
+
+                                isSavedSuccessfully = true;
+                            }
+
+
+                        }
+                    }
+                }
+                  
+            }
+            catch (Exception ex)
+            {
+                isSavedSuccessfully = false;
+            }
+            
+                return RedirectToAction("Index");
+            
+
+
+        }
+        [HttpPost]
+        public ActionResult ImageUploadForUpdate(int? UId)
+        {
+            
+            bool isSavedSuccessfully = false;
+
+            string fName = "";
+            try
+            {
+                foreach (string fileName in Request.Files)
+                {
+                    HttpPostedFileBase file = Request.Files[fileName];
+                    fName = file.FileName;
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        if (file.FileName.ToLower().EndsWith("jpg") || file.FileName.ToLower().EndsWith("png"))
+                        {
+                         
 
                                 var path = Path.Combine(Server.MapPath("~/Content/images/ProfilePic/"));
                                 string pathString = System.IO.Path.Combine(path.ToString());
@@ -619,37 +691,21 @@ namespace POSApplication.Controllers
                                     string imagepath = "~/Content/images/ProfilePic/" + updatedFileName;
                                     upload.ImageURL = imagepath;
                                     upload.ImageDate = DateTime.Now;
-                                    upload.Secu_UserId = UId ?? 0;
+
+
+                                    upload.Secu_UserId = UId??0;
+                                    
+                               
 
                                     db.UserImage.Add(upload);
                                     db.SaveChanges();
-                                }
-                            }
-                            else
-                            {
 
-                                var path = Path.Combine(Server.MapPath("~/Content/images/Signatures/"));
-                                string pathString = System.IO.Path.Combine(path.ToString());
-                                var newName = Path.GetFileName(file.FileName);
-                                bool isExists = System.IO.Directory.Exists(pathString);
-                                if (!isExists) System.IO.Directory.CreateDirectory(pathString);
-                                {
-                                    var updatedFileName = UId + "!" + newName;
-                                    //var uploadpath = string.Format("{0}\\{1}", pathString, file.FileName);
-                                    var uploadpath = string.Format("{0}{1}", pathString, updatedFileName);
-                                    file.SaveAs(uploadpath);
-                                    //save in db
-                                    UserImage upload = new UserImage();
-                                    upload.Id = 0;
-                                    string imagepath = "~/Content/images/Signatures/" + updatedFileName;
-                                    upload.ImageURL = imagepath;
-                                    upload.ImageDate = DateTime.Now;
-                                    upload.Secu_UserId = UId ?? 0;
-
-                                    db.UserImage.Add(upload);
-                                    db.SaveChanges();
+                                    isSavedSuccessfully = true;
                                 }
-                            }
+                           
+                              
+                                
+                            
 
                         }
 
@@ -660,38 +716,11 @@ namespace POSApplication.Controllers
             {
                 isSavedSuccessfully = false;
             }
-            if (isSavedSuccessfully)
-            {
-                //return Json(new
-                //{
-                //    Message = fName
-                //});
 
-                if (userId == UId)
-                {
-                    FormsAuthentication.SignOut();
-                    Session.Abandon();
-                    return RedirectToAction("Login", "Authentication");
-                }
-                else
-                {
-
-                    return RedirectToAction("Index");
-                }
-
-
-            }
-            else
-            {
-                return Json(new
-                {
-                    Message = "Error in saving file"
-                });
-            }
-
+            return RedirectToAction("Index");
+         
 
         }
-
 
         public JsonResult DeleteImage(int Id)
         {

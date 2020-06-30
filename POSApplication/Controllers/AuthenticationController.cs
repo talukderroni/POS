@@ -41,71 +41,78 @@ namespace POSApplication.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Login(Secu_User model, string returnUrl)
+           
         {
-
-            var user = db.Secu_User.FirstOrDefault(x => x.UserName == model.UserName);
-            var UserImage = db.UserImage.Where(x => x.Secu_UserId == user.Id).Select(x => x.ImageURL).FirstOrDefault();
-            var Message = "";
-            if (user != null)
+            try
             {
-                if (encryptionDecryptionUtil.VerifyPassword(user.Password, model.Password, user.Salt))
+                var user = db.Secu_User.FirstOrDefault(x => x.UserName == model.UserName);
+                var UserImage = db.UserImage.Where(x => x.Secu_UserId == user.Id).Select(x => x.ImageURL).FirstOrDefault();
+                var Message = "";
+                if (user != null)
                 {
-                    //flagLogin = true;
+                    if (encryptionDecryptionUtil.VerifyPassword(user.Password, model.Password, user.Salt))
+                    {
+                        //flagLogin = true;
 
-                    FormsAuthentication.SetAuthCookie(model.UserName, false);
+                        FormsAuthentication.SetAuthCookie(model.UserName, false);
 
-                    Session["uid"] = user.Id;
-            
-             
-                    Session["IsAdmin"] = user.IsAdmin;
-                    Session["IsSuperAdmin"] = user.IsSuperAdmin == null ? false: user.IsSuperAdmin;
-                    Session["loginCounter"] = 0;
+                        Session["uid"] = user.Id;
 
-                    Session["UserImage"] = UserImage;
 
-                    Session["UserFullName"] = user.UserFullName;
+                        //Session["IsAdmin"] = user.IsAdmin;
+                        Session["IsAdmin"] = user.IsAdmin == null ? false : user.IsAdmin;
+                        Session["loginCounter"] = 0;
 
-                    Session["UserRole"] = user.Secu_Role.Name;
-                    user.LastLoginDate = DateTime.Now;
-                    db.Entry(user).State = EntityState.Modified;
+                        Session["UserImage"] = UserImage;
 
-                    
-              
+                        Session["UserFullName"] = user.UserFullName;
+
+                        Session["UserRole"] = user.Secu_Role.Name;
+                        user.LastLoginDate = DateTime.Now;
+                        db.Entry(user).State = EntityState.Modified;
+
+
+
+
+                        db.SaveChanges();
+
+                        if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                            && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home");
+
+                        }
+
+                    }
+
+
 
                     db.SaveChanges();
 
-                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
-                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
-                    {
-                        return Redirect(returnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-
-                    }
-
                 }
 
-               
+                //ModelState.AddModelError("", "Invalid User/Password/Company");
 
-                db.SaveChanges();
+                ViewBag.Message = "Invalid User Name Or Password!!";
+
+
+
+
+
+             
 
             }
 
-            //ModelState.AddModelError("", "Invalid User/Password/Company");
-
-            ViewBag.Message = "Invalid User Name Or Password!!";
-          
-
-
-         
+            catch(Exception ex)
+            {
+                
+            }
 
             return View(model);
-
-
-
-            
         }
 
 
