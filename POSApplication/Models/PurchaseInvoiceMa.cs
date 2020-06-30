@@ -5,7 +5,6 @@ namespace POSApplication.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
     [Table("PurchaseInvoiceMas")]
     public partial class PurchaseInvoiceMa
     {
@@ -16,6 +15,8 @@ namespace POSApplication.Models
         }
 
         public int Id { get; set; }
+
+        public int? SupplierId { get; set; }
 
         [Required]
         [StringLength(25)]
@@ -30,9 +31,12 @@ namespace POSApplication.Models
 
         public DateTime Date { get; set; }
 
-        public int? Secu_UserId { get; set; }
+        [StringLength(20)]
+        public string UserFullName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseInvoiceDet> PurchaseInvoiceDets { get; set; }
+
+        public virtual Supplier Supplier { get; set; }
     }
 }

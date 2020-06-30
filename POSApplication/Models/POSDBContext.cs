@@ -35,11 +35,8 @@ namespace POSApplication.Models
         //----------------End Parameter DBSet------------//
         //--------- Start Information Db Set --- 30/06/30--Talukder---//
 
-
         public virtual DbSet<PurchaseInvoiceDet> PurchaseInvoiceDets { get; set; }
         public virtual DbSet<PurchaseInvoiceMa> PurchaseInvoiceMas { get; set; }
-
-
 
 
 
@@ -175,6 +172,11 @@ namespace POSApplication.Models
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
+
+            modelBuilder.Entity<PurchaseInvoiceDet>()
+                .Property(e => e.ProductName)
+                .IsUnicode(false);
+
             modelBuilder.Entity<PurchaseInvoiceDet>()
                 .Property(e => e.PurchasePrize)
                 .HasPrecision(12, 2);
@@ -192,13 +194,16 @@ namespace POSApplication.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<PurchaseInvoiceMa>()
+                .Property(e => e.UserFullName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PurchaseInvoiceMa>()
                 .HasMany(e => e.PurchaseInvoiceDets)
                 .WithOptional(e => e.PurchaseInvoiceMa)
                 .HasForeignKey(e => e.PurchaseInvoiceMasId)
                 .WillCascadeOnDelete();
 
 
-            
 
 
 

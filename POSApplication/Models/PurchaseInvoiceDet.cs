@@ -15,6 +15,9 @@ namespace POSApplication.Models
 
         public int? ProductId { get; set; }
 
+        [StringLength(1)]
+        public string ProductName { get; set; }
+
         public int Quantity { get; set; }
 
         public decimal PurchasePrize { get; set; }
@@ -22,5 +25,8 @@ namespace POSApplication.Models
         public int? PurchaseInvoiceMasId { get; set; }
 
         public virtual PurchaseInvoiceMa PurchaseInvoiceMa { get; set; }
+
+        public virtual Product Product { get; set; }
+        public virtual ProductCategory ProductCategory { get; set; }
     }
 }

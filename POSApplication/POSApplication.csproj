@@ -179,6 +179,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ExpenseType.cs" />
     <Compile Include="Models\GeneralAccount.cs" />
+    <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\POSDBContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
@@ -2830,10 +2831,10 @@
     <Content Include="Views\ExpenseTypes\Details.cshtml" />
     <Content Include="Views\ExpenseTypes\Edit.cshtml" />
     <Content Include="Views\ExpenseTypes\Index.cshtml" />
-    <Content Include="Views\PurchaseInvoice\Create.cshtml" />
     <Content Include="Views\PurchaseInvoice\Delete.cshtml" />
     <Content Include="Views\PurchaseInvoice\Details.cshtml" />
     <Content Include="Views\PurchaseInvoice\Edit.cshtml" />
+    <Content Include="Views\PurchaseInvoice\Create.cshtml" />
     <Content Include="Views\PurchaseInvoice\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

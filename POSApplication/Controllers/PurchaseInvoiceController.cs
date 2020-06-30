@@ -17,6 +17,8 @@ namespace POSApplication.Controllers
         // GET: PurchaseInvoice
         public ActionResult Index()
         {
+
+
             return View(db.PurchaseInvoiceMas.ToList());
         }
 
@@ -38,12 +40,12 @@ namespace POSApplication.Controllers
         // GET: PurchaseInvoice/Create
         public ActionResult Create()
         {
+            ViewBag.SupplierId = new SelectList(db.Suppliers.ToList().Distinct(), "Id", "SupplierName");
+           
             return View();
         }
 
-        // POST: PurchaseInvoice/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,CompanyName,Phone,Email,Date,Secu_UserId")] PurchaseInvoiceMa purchaseInvoiceMa)
