@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var si = 0;
 }
 
 <div class="panel panel-default">
@@ -35,15 +36,20 @@
                         Date
                     </th>
                     <th>
-                        User FullName
+                        User Name
                     </th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var item in Model)
                 {
+                    si++;
                     <tr>
+                        <td>
+                            @si
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
                         </td>
@@ -57,7 +63,7 @@
                             @Html.DisplayFor(modelItem => item.Email)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Date)
+                          @item.Date.ToShortDateString()
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.UserFullName)
@@ -65,7 +71,7 @@
                         <td>
 
                             @Html.ActionLink(" ", "Edit", new { Id = item.Id }, new { @class = "btn btn-xs-info  glyphicon glyphicon-pencil", @title = "Edit" })
-                            @Html.ActionLink(" ", "Detail", new { Id = item.Id }, new { @class = "btn btn-xs-info glyphicon  glyphicon-file", @title = "Detail" })
+
                             <a class="btn btn-xs labeled btn-danger" title="Delete" href="javascript:deleteFunction(@item.Id)"><i class="glyphicon glyphicon-remove"></i></a>
                         </td>
                     </tr>
@@ -77,6 +83,7 @@
 @section scripts
 {
     <script>
+
 
 
         $("#datatable").DataTable();
@@ -95,7 +102,7 @@
             }).then((result) => {
                 if (result.value) {
                     $.ajax({
-                        url: "/ExpenseTypes/DeleteItem",
+                        url: "/PurchaseInvoice/Delete",
                         type: "post",
                         data: {
                             Id: Id
@@ -105,7 +112,7 @@
                         success: function (flag) {
                             console.log(flag);
 
-                            if (flag.flag == true) {
+                            if (flag == true) {
                                 Swal.fire({
                                     position: 'top',
                                     icon: 'success',
@@ -113,7 +120,8 @@
                                     showConfirmButton: true,
                                 }).then((result) => {
                                     if (result.value) {
-                                        window.location = "/ExpenseTypes/Index";
+                                        window.location = "/PurchaseInvoice/Index";
+
                                     }
                                 })
 

@@ -173,13 +173,12 @@ namespace POSApplication.Models
                 .IsUnicode(false);
 
 
-            modelBuilder.Entity<PurchaseInvoiceDet>()
-                .Property(e => e.ProductName)
-                .IsUnicode(false);
 
             modelBuilder.Entity<PurchaseInvoiceDet>()
                 .Property(e => e.PurchasePrize)
                 .HasPrecision(12, 2);
+
+            
 
             modelBuilder.Entity<PurchaseInvoiceMa>()
                 .Property(e => e.CompanyName)

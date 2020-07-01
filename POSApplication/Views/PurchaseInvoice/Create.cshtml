@@ -590,21 +590,19 @@
 
 
           var DetailsValue = [];
-          for (var i = 0; i < ProductCategory.length; i++) {
+          for (var i = 0; i < ProductCategory.length; i++)
+          {
 
               DetailsValue.push({
 
-                  ProductCategory: ProductCategory[i].value,
-                  ProductName: ProductName[i].value,
-                  Qty: Qty[i].value,
+                  ProductCategoryId: ProductCategory[i].value,
+                  ProductId: ProductName[i].value,
+                  Quantity: Qty[i].value,
                   PurchasePrize: PurchasePrize[i].value,
                   Amount: Amount[i].value
               });
           }
           console.log(DetailsValue);
-
-
-
           $.ajax({
               url: "/PurchaseInvoice/SavePurchaseInvoice",
               type: "POST",
@@ -632,7 +630,8 @@
                           showConfirmButton: true,
                       }).then((result) => {
                           if (result.value) {
-                              window.location = "/Index/InPurchaseInvoicedex";
+                              window.location = "/PurchaseInvoice/Index";
+                            
                           }
                       })
 

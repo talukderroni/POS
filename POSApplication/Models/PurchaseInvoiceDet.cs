@@ -15,9 +15,7 @@ namespace POSApplication.Models
 
         public int? ProductId { get; set; }
 
-        [StringLength(1)]
-        public string ProductName { get; set; }
-
+      
         public int Quantity { get; set; }
 
         public decimal PurchasePrize { get; set; }

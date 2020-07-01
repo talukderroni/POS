@@ -36,7 +36,7 @@ namespace POSApplication.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+     
         public JsonResult SavePurchaseInvoice(PurchaseInvoiceMa purchaseInvoiceMa, List<PurchaseInvoiceDet> PurchaseInvoicedDetails)
         {
             var result = new
@@ -55,6 +55,7 @@ namespace POSApplication.Controllers
                     try
                     {
                         purchaseInvoiceMa.UserFullName = Session["UserFullName"].ToString();
+                      
                         db.PurchaseInvoiceMas.Add(purchaseInvoiceMa);
                         db.SaveChanges();
 
@@ -65,10 +66,11 @@ namespace POSApplication.Controllers
                             det.PurchaseInvoiceMasId = purchaseInvoiceMa.Id;
 
                             det.ProductCategoryId = item.ProductCategoryId;
-                            det.ProductName = item.ProductName;
+                          
                             det.Quantity = item.Quantity;
                             det.PurchasePrize = item.PurchasePrize;
                             det.Amount = item.Amount;
+                            det.ProductId = item.ProductId;
 
                             db.PurchaseInvoiceDets.Add(det);
                             db.SaveChanges();
@@ -104,7 +106,88 @@ namespace POSApplication.Controllers
 
             return Json(result,JsonRequestBehavior.AllowGet);
         }
+        
 
+             [HttpPost]
+
+        public JsonResult UpdatePurchaseInvoice(PurchaseInvoiceMa purchaseInvoiceMa, List<PurchaseInvoiceDet> PurchaseInvoicedDetails)
+        {
+            var result = new
+            {
+                flag = false,
+                message = "Error occured. !",
+
+            };
+
+
+            if (ModelState.IsValid)
+            {
+
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        purchaseInvoiceMa.UserFullName = Session["UserFullName"].ToString();
+
+                        if (purchaseInvoiceMa.Id > 0)
+                        {
+                            var data = db.PurchaseInvoiceDets.Where(x => x.PurchaseInvoiceMasId == purchaseInvoiceMa.Id).ToList();
+                            db.PurchaseInvoiceDets.RemoveRange(data);
+                            db.SaveChanges();
+                        }
+
+                      
+                        db.Entry(purchaseInvoiceMa).State = EntityState.Modified;
+                        db.SaveChanges();
+                      
+
+                        foreach (var item in PurchaseInvoicedDetails)
+                        {
+                            PurchaseInvoiceDet det = new PurchaseInvoiceDet();
+
+                            det.PurchaseInvoiceMasId = purchaseInvoiceMa.Id;
+
+                            det.ProductCategoryId = item.ProductCategoryId;
+
+                            det.Quantity = item.Quantity;
+                            det.PurchasePrize = item.PurchasePrize;
+                            det.Amount = item.Amount;
+                            det.ProductId = item.ProductId;
+
+                            db.PurchaseInvoiceDets.Add(det);
+                            db.SaveChanges();
+                        }
+
+
+                        transaction.Commit();
+                        result = new
+                        {
+                            flag = true,
+                            message = "Succes occured. !",
+
+                        };
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        result = new
+                        {
+                            flag = false,
+                            message = "Fail occured. !",
+
+                        };
+
+                        var message = ex.Message;
+
+
+
+
+                    }
+                }
+            }
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         // GET: PurchaseInvoice/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -117,6 +200,7 @@ namespace POSApplication.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.SupplierId = new SelectList(db.Suppliers.ToList(), "Id", "SupplierName", purchaseInvoiceMa.SupplierId);
             return View(purchaseInvoiceMa);
         }
 
@@ -135,6 +219,28 @@ namespace POSApplication.Controllers
             }
             return View(purchaseInvoiceMa);
         }
+        //--- Get Saved Data For Edit-----//
+        public JsonResult GetSavedData(int? Id)
+        {
+          var data = db.PurchaseInvoiceDets.Where(x => x.PurchaseInvoiceMasId == Id).Select(x => new
+                {
+                    ProductCategoryId = x.ProductCategoryId,
+                    ProductCatagoryName=x.ProductCategory.CategoryName,
+                    ProductId = x.ProductId,
+                    ProductName=x.Product.ProductName,
+                    Qty=x.Quantity,
+                    Amount= x.Amount,
+              PurchasePrize=x.PurchasePrize
+
+          
+                }).ToList();
+
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+
+        
+
+
         public JsonResult GetSupplierRelatedData(int? SupplierId)
         {
             if (SupplierId == null)
@@ -234,14 +340,14 @@ namespace POSApplication.Controllers
 
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+       
+        public ActionResult Delete(int Id)
         {
-            PurchaseInvoiceMa purchaseInvoiceMa = db.PurchaseInvoiceMas.Find(id);
+            PurchaseInvoiceMa purchaseInvoiceMa = db.PurchaseInvoiceMas.Find(Id);
             db.PurchaseInvoiceMas.Remove(purchaseInvoiceMa);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(true,JsonRequestBehavior.AllowGet);
         }
 
 
