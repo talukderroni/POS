@@ -22,30 +22,17 @@ namespace POSApplication.Controllers
             return View(db.PurchaseInvoiceMas.ToList());
         }
 
-        // GET: PurchaseInvoice/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PurchaseInvoiceMa purchaseInvoiceMa = db.PurchaseInvoiceMas.Find(id);
-            if (purchaseInvoiceMa == null)
-            {
-                return HttpNotFound();
-            }
-            return View(purchaseInvoiceMa);
-        }
+
 
         // GET: PurchaseInvoice/Create
         public ActionResult Create()
         {
             ViewBag.SupplierId = new SelectList(db.Suppliers.ToList().Distinct(), "Id", "SupplierName");
-           
+
             return View();
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,CompanyName,Phone,Email,Date,Secu_UserId")] PurchaseInvoiceMa purchaseInvoiceMa)
@@ -76,8 +63,8 @@ namespace POSApplication.Controllers
         }
 
         // POST: PurchaseInvoice/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,CompanyName,Phone,Email,Date,Secu_UserId")] PurchaseInvoiceMa purchaseInvoiceMa)
@@ -90,23 +77,61 @@ namespace POSApplication.Controllers
             }
             return View(purchaseInvoiceMa);
         }
-
-        // GET: PurchaseInvoice/Delete/5
-        public ActionResult Delete(int? id)
+        public JsonResult GetSupplierRelatedData(int? SupplierId)
         {
-            if (id == null)
+            if (SupplierId == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return Json(false, JsonRequestBehavior.AllowGet);
+
             }
-            PurchaseInvoiceMa purchaseInvoiceMa = db.PurchaseInvoiceMas.Find(id);
-            if (purchaseInvoiceMa == null)
+            else
             {
-                return HttpNotFound();
+                var data = db.Suppliers.Where(x => x.Id == SupplierId).Select(x => new
+                {
+                    CompanyName = x.CompanyName,
+                    Phone = x.Phone,
+                    Email = x.Email
+
+                }).FirstOrDefault();
+
+                return Json(data, JsonRequestBehavior.AllowGet);
             }
-            return View(purchaseInvoiceMa);
+
         }
 
-        // POST: PurchaseInvoice/Delete/5
+        public JsonResult GetProductCatagoryName()
+        {
+
+            var data = db.ProductCategories.Distinct().ToList().Select(x => new
+            {
+           
+                Value = x.Id,
+                Text = x.CategoryName
+
+            }).ToList();
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+
+
+        }
+        public JsonResult GetProductName()
+        {
+
+            var data = db.Products.Distinct().ToList().Select(x => new
+            {
+
+                Value = x.Id,
+                Text = x.ProductName
+
+            }).ToList();
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+
+
+        }
+
+
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -116,6 +141,10 @@ namespace POSApplication.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {
