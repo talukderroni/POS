@@ -7,13 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using POSApplication.Models;
-
+using System.Web.Security;
 namespace POSApplication.Controllers
 {
     public class PurchaseInvoiceController : Controller
     {
         private POSDBContext db = new POSDBContext();
-
+      
+      
+     
         // GET: PurchaseInvoice
         public ActionResult Index()
         {
@@ -35,16 +37,72 @@ namespace POSApplication.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CompanyName,Phone,Email,Date,Secu_UserId")] PurchaseInvoiceMa purchaseInvoiceMa)
+        public JsonResult SavePurchaseInvoice(PurchaseInvoiceMa purchaseInvoiceMa, List<PurchaseInvoiceDet> PurchaseInvoicedDetails)
         {
+            var result = new
+            {
+                flag = false,
+                message = "Error occured. !",
+
+            };
+
+
             if (ModelState.IsValid)
             {
-                db.PurchaseInvoiceMas.Add(purchaseInvoiceMa);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        purchaseInvoiceMa.UserFullName = Session["UserFullName"].ToString();
+                        db.PurchaseInvoiceMas.Add(purchaseInvoiceMa);
+                        db.SaveChanges();
+
+                        foreach (var item in PurchaseInvoicedDetails)
+                        {
+                            PurchaseInvoiceDet det = new PurchaseInvoiceDet();
+
+                            det.PurchaseInvoiceMasId = purchaseInvoiceMa.Id;
+
+                            det.ProductCategoryId = item.ProductCategoryId;
+                            det.ProductName = item.ProductName;
+                            det.Quantity = item.Quantity;
+                            det.PurchasePrize = item.PurchasePrize;
+                            det.Amount = item.Amount;
+
+                            db.PurchaseInvoiceDets.Add(det);
+                            db.SaveChanges();
+                        }
+
+
+                        transaction.Commit();
+                        result = new
+                        {
+                            flag = true,
+                            message = "Succes occured. !",
+
+                        };
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        result = new
+                        {
+                            flag = false,
+                            message = "Fail occured. !",
+
+                        };
+
+                        var message = ex.Message;
+
+
+
+
+                    }
+                }
             }
 
-            return View(purchaseInvoiceMa);
+            return Json(result,JsonRequestBehavior.AllowGet);
         }
 
         // GET: PurchaseInvoice/Edit/5
@@ -104,7 +162,7 @@ namespace POSApplication.Controllers
 
             var data = db.ProductCategories.Distinct().ToList().Select(x => new
             {
-           
+
                 Value = x.Id,
                 Text = x.CategoryName
 
@@ -129,8 +187,52 @@ namespace POSApplication.Controllers
 
 
         }
+        public JsonResult GetProductByCatagoryId(int? ProductCategoryId)
+        {
+
+            if (ProductCategoryId == null)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+            {
+                var data = db.Products.Where(x => x.ProductCategoryId == ProductCategoryId).Select(x => new
+                {
+
+                    Value = x.Id,
+                    Text = x.ProductName
+
+                }).Distinct().ToList();
+
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+
+        }
 
 
+        public JsonResult GetPrizeByProductId(int? ProductId)
+        {
+
+            if (ProductId == null)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+            {
+                var data = db.Products.Where(x => x.Id == ProductId).Select(x => new
+                {
+
+
+                    PurchasePrize = x.PurchasePrice
+
+                }).FirstOrDefault();
+
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+
+        }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

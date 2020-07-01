@@ -21,7 +21,8 @@ namespace POSApplication.Models
         public int Quantity { get; set; }
 
         public decimal PurchasePrize { get; set; }
-
+        
+            public decimal Amount { get; set; }
         public int? PurchaseInvoiceMasId { get; set; }
 
         public virtual PurchaseInvoiceMa PurchaseInvoiceMa { get; set; }
